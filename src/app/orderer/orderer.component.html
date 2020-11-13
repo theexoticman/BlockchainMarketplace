@@ -1,0 +1,15 @@
+<div class="orderers">
+	<mat-accordion>
+	  <mat-expansion-panel hideToggle *ngFor="let orderer of orderers">
+	    <mat-expansion-panel-header>
+	      <mat-panel-title>
+	      	Owner: {{orderer.owner}}
+	      </mat-panel-title>
+	      <mat-panel-description>
+			Consortium name: {{orderer.consortium.name}}
+	      </mat-panel-description>
+	    </mat-expansion-panel-header>
+	    <p>Consensus Algorithm:	{{orderer.consensus}} <br></p>
+	  </mat-expansion-panel>
+	</mat-accordion>
+</div>

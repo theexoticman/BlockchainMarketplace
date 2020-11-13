@@ -1,0 +1,11 @@
+<div >
+	<mat-tab-group (selectedTabChange)="PickContent($event)" mat-align-tabs="center">
+	  <mat-tab  *ngFor="let tile of tiles" 
+	  			label="{{tile.text}}">
+	  </mat-tab>
+	</mat-tab-group>
+	<app-blocks *ngIf="currentTab === tiles[0].text"></app-blocks>
+	<app-consortium *ngIf="currentTab === tiles[1].text"></app-consortium>
+	<app-peer *ngIf="currentTab === tiles[2].text"></app-peer>
+	<app-orderer *ngIf="currentTab === tiles[3].text"></app-orderer>
+</div>

@@ -1,0 +1,4 @@
+configuration
+
+	angular.json aot to false to stop build failure - https://dev.to/imbilal1/what-are-aot-jit-compiler-in-angular-2-488h
+	probably fails because of unused materials

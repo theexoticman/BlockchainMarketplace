@@ -1,0 +1,16 @@
+<div class="peers">
+	<mat-accordion>
+	  <mat-expansion-panel hideToggle *ngFor="let peer of peers">
+	    <mat-expansion-panel-header>
+	      <mat-panel-title>
+	      	Peer Type: {{peer.type}}
+	      </mat-panel-title>
+	      <mat-panel-description>
+			owner: {{peer.owner}}
+	      </mat-panel-description>
+	    </mat-expansion-panel-header>
+	    <p>Smart Contracts: {{peer.smartContracts}} <br></p>
+	    <p>Ledgers:	{{peer.ledgers}} <br></p>
+	  </mat-expansion-panel>
+	</mat-accordion>
+</div>

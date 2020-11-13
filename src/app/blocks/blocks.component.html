@@ -1,0 +1,15 @@
+<div class="blocks">
+	<mat-accordion>
+	  <mat-expansion-panel hideToggle *ngFor="let block of blocksLists">
+	    <mat-expansion-panel-header>
+	      <mat-panel-title>
+	      	{{block.name}}
+	      </mat-panel-title>
+	      <mat-panel-description>
+	        {{block.hash}}
+	      </mat-panel-description>
+	    </mat-expansion-panel-header>
+	    <p>	description: {{block.description}} <br></p>
+	  </mat-expansion-panel>
+	</mat-accordion>
+</div>
