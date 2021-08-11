@@ -1,0 +1,40 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Acquisition Date Column -->
+        <ng-container matColumnDef="Acquisition Date">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.acq_date}} </mat-cell>
+        </ng-container>
+
+        <!-- Sale Column -->
+        <ng-container matColumnDef="Sales Date">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.sell_date}} </mat-cell>
+        </ng-container>
+
+        <!-- Owner Name Column -->
+        <ng-container matColumnDef="Owner Name">
+            <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.owner_name}} </mat-cell>
+        </ng-container>
+
+        <!-- Owner Addr Column -->
+        <ng-container matColumnDef="Owner Address">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.owner_addr}} </mat-cell>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="Price (eth)">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { BlockchainService, Block  } from '../blockchain.service';
 import { BlocksComponent } from '../blocks/blocks.component';
 import {Observable} from 'rxjs';
-
 export interface Tile {
   color: string;
   cols: number;
@@ -29,11 +27,12 @@ export class BlockchainViewerComponent implements OnInit {
 
 
   	currentTab="";
-  	
-  	constructor(private blockchainService: BlockchainService) { }
+  	balance=0;
+	  addresses: Observable<string[]>;
+  	constructor() { }
 
-	ngOnInit(): void {
-		
+	async ngOnInit(): Promise<void> {
+	
 	}
 	PickContent(event){
 		this.currentTab=event.tab.textLabel;

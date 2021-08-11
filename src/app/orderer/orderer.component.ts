@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlockchainService, Orderer  } from '../blockchain.service';
+import { BlockchainService, Orderer  } from '../services/blockchain.service';
 
 @Component({
   selector: 'app-orderer',

@@ -1,0 +1,37 @@
+<div class="modal-newsletter">
+    <h4 mat-dialog-title>Subscribe to our monthly newsletter</h4>
+    <div mat-dialog-content>
+        <mat-icon color="warn" class="icon-box">email</mat-icon>
+        <p>Join our subscriber's list to get the latest updates and articles on our services.</p>
+        <form (ngSubmit)="onSubmit()" [formGroup]="newsletterForm">
+            <div class="newsletter-form-field">
+                <mat-form-field appearance="outline" class="newsletter-input">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" [(ngModel)]="model.firstName">
+                    <mat-error *ngIf="lastName.invalid"> First Name is <strong>required</strong> </mat-error>
+
+                </mat-form-field>
+            </div>
+
+            <div class="newsletter-form-field">
+                <mat-form-field appearance="outline" class="newsletter-input">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" [(ngModel)]="model.lastName">
+                    <mat-error *ngIf="lastName.invalid"> Last Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="newsletter-form-field">
+                <mat-form-field appearance="outline" class="newsletter-input">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" [(ngModel)]="model.email">
+                    <mat-error *ngIf="newsletterForm.hasError('email') && !newsletterForm.hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage("email")}}</mat-error>
+                </mat-form-field>
+            </div>
+            <button type="submit" [disabled]="!newsletterForm.valid">Submit</button>
+        </form>
+    </div>
+</div>

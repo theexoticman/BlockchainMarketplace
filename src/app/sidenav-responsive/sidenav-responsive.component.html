@@ -1,23 +1,31 @@
-<div class="example-container" >
-  <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">JL's Brain</h1>
-  </mat-toolbar>
+<div class="example-container">
+    <mat-toolbar color="primary" class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <h1 class="example-app-name">NFT Fractionalized Investment Platform</h1>
+    </mat-toolbar>
+    <!--<div class="header">
+        <mat-tab-group (selectedTabChange)="PickContent($event)" mat-align-tabs="center">
+            <mat-tab *ngFor="let tile of tiles" label="{{tile.text}}">
+            </mat-tab>
+        </mat-tab-group>
+        <app-blocks *ngIf="currentTab === tiles[0].text"></app-blocks>
+        <app-consortium *ngIf="currentTab === tiles[1].text"></app-consortium>
+        <app-peer *ngIf="currentTab === tiles[2].text"></app-peer>
+        <app-orderer *ngIf="  currentTab === tiles[3].text"></app-orderer>
+    </div> -->
 
-  <mat-sidenav-container class="example-sidenav-container"
-                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-      <mat-nav-list class="menu">
-        <a (click)="snav.toggle()" routerLink="/{{item}}" routerLinkActive="active" mat-list-item routerLink="." *ngFor="let item of MenuItems">{{item}}</a>
-      </mat-nav-list>
-    </mat-sidenav>
+    <!-- sidebar 
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+            <mat-nav-list class="menu">
+                <a (click)="snav.toggle()" routerLink="/{{item}}" routerLinkActive="active" mat-list-item routerLink="." *ngFor="let item of MenuItems">{{item}}</a>
+            </mat-nav-list>
+        </mat-sidenav>
 
-   <!-- <mat-sidenav-content>
+        <!-- <mat-sidenav-content>
       <p> *ngFor="let content of fillerContent">{{content}}</p>
-    </mat-sidenav-content>
-  -->
-    <router-outlet></router-outlet>
-  </mat-sidenav-container>
-</div>
+    </mat-sidenav-content> 
 
+        <router-outlet></router-outlet>
+    </mat-sidenav-container>-->
+</div>

@@ -7,6 +7,7 @@ import { KafkaComponent } from './kafka/kafka.component';
 import { TestingComponent } from './testing/testing.component';
 import { GoComponent } from './go/go.component';
 import { SpringComponent } from './spring/spring.component';
+import { EmailSuscribeComponent } from './email-suscribe/email-suscribe.component';
 
 const routes: Routes = [
 		{ path: 'Blockchain-Viewer', component: BlockchainViewerComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
 		{ path: 'Go', component: GoComponent },
 		{ path: 'Testing', component: TestingComponent },
 		{ path: 'Spring', component: SpringComponent },			
-		{ path: 'Kafka', component: KafkaComponent },			
+		{ path: 'Kafka', component: KafkaComponent },
+		{ path: 'Subscribe', component: EmailSuscribeComponent }			
 	];
 
 @NgModule({

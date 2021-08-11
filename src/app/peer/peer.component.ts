@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlockchainService, Peer  } from '../blockchain.service';
+import { BlockchainService, Peer  } from '../services/blockchain.service';
 
 @Component({
   selector: 'app-peer',

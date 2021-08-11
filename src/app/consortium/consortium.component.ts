@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlockchainService, Consortium  } from '../blockchain.service';
+import { BlockchainService, Consortium  } from'../services/blockchain.service';
 
 @Component({
   selector: 'app-consortium',

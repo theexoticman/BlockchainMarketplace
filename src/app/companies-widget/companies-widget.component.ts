@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { BlockchainService, Block  } from '../blockchain.service';
+import { BlockchainService, Block  } from '../services/blockchain.service';
 import { BlocksComponent } from '../blocks/blocks.component';
 import {Observable} from 'rxjs';
 

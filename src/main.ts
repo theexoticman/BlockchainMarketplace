@@ -19,15 +19,18 @@ import { KafkaComponent } from './app/kafka/kafka.component';
 import { TestingComponent } from './app/testing/testing.component';
 import { GoComponent } from './app/go/go.component';
 import { SpringComponent } from './app/spring/spring.component';
-import { BlockchainService, Peer, Block, Consortium, Orderer } from './app/blockchain.service';
+import { BlockchainService, Peer, Block, Consortium, Orderer } from './app/services/blockchain.service';
 import { FabricLedgerComponent } from './app/fabric-ledger/fabric-ledger.component';
 import { ConsortiumComponent } from './app/consortium/consortium.component';
 import { PeerComponent } from './app/peer/peer.component';
 import { OrdererComponent } from './app/orderer/orderer.component';
 import { BlocksComponent } from './app/blocks/blocks.component';
 import { MatCardModule } from '@angular/material/card';
-
-
+import { EmailSuscribeComponent } from './app/email-suscribe/email-suscribe.component';
+import { Injectable } from '@angular/core';
+import { BackendService } from './app/services/backend.service';
+import {NftCardComponent} from './app/nft-card/nft-card.component'
+import { HistoryComponent } from './app/history/history.component';
 
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
@@ -35,7 +38,7 @@ import { MatCardModule } from '@angular/material/card';
 // This makes the examples that use MatFormField render the same in StackBlitz as on the docs site.
 @NgModule({
   imports: [
-  	MyModule,
+    MyModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -48,28 +51,31 @@ import { MatCardModule } from '@angular/material/card';
   ],
   entryComponents: [AppComponent],
   declarations: [
-  	AppComponent,
-  	BlockchainViewerComponent, 
-    InfraAsCodeComponent, 
-    AngularComponent, 
-    KafkaComponent, 
-    TestingComponent, 
-    GoComponent, 
+    AppComponent,
+    BlockchainViewerComponent,
+    InfraAsCodeComponent,
+    AngularComponent,
+    KafkaComponent,
+    TestingComponent,
+    GoComponent,
     SpringComponent,
     SidenavResponsiveComponent,
-    FabricLedgerComponent, 
-    ConsortiumComponent, 
-    PeerComponent, 
-    OrdererComponent, 
-    BlocksComponent
-   ],
+    FabricLedgerComponent,
+    ConsortiumComponent,
+    PeerComponent,
+    OrdererComponent,
+    BlocksComponent,
+    EmailSuscribeComponent,
+    NftCardComponent,
+    HistoryComponent
+  ],
   bootstrap: [AppComponent],
   providers: [
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
+    BackendService,
     BlockchainService
   ]
 })
-export class AppModule {}
+export class AppModule { }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
