@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from '../services/backend.service';
+import { ActivatedRoute } from '@angular/router';
+import { PNftDetails } from '../interfaces/PNft-details';
+import { Observable } from 'rxjs';
+
+import { BlockchainService, Block } from '../services/blockchain.service';
 
 @Component({
     selector: 'app-nft-card',
@@ -6,14 +12,33 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./nft-card.component.css'],
 })
 export class NftCardComponent implements OnInit {
-    data ={
-        path:"./assets/snorlax.png",
-        creator:{name:"BE A STEREOTYPE",addr:"0xcafe93d2db682d8031569cee78b994637ba0de8a"},
-        owner:{name:"JLM",addr:"0x0F990Ef7eC160f01AF7148B74CC8a86FE46c551e"},
-        nft:{type:"Digital",name:"Ataraxis",addr:"0xd07dc4262bcdbf85190c01c996b4c06a461d2430"},
-        
-    }
-    constructor() {}
+    payload: String;
+    public blocksLists: Observable<Block[]>;
 
-    ngOnInit(): void {}
+    apiResp: Observable<PNftDetails>;
+    otherData = { video: './assets/Ataraxis.mp4', type: 'Digital', gif:'./assets/BE_A_STEREOTYPE.gif' };
+    tagData: String;
+    
+    constructor(
+        private route: ActivatedRoute,
+        private backendService: BackendService,private blockchainService: BlockchainService
+    ) {}
+
+    ngOnInit(): void {
+        this.blocksLists = this.blockchainService.getBlocks();
+        this.tagData =
+            'WFg6WFg6WFg6WFg6WFg6WFg6WFg=BMOFh3hlkR+Fxdd1kj3bABeJSKXPrhwAHCY9LfNL0Sw4QOnLsUR+1WCTLF6ba36FBR0crilnvlT3upuDuLB9Z4VN1eApxJhEtNlNVDtvSVMFyKIId3N23tbx3FmgQEPUh+KUJaBqRtNSkmBhPmjs8C/50iEhQzZxmhuGhzU4V2vXX2feo46eKJKVP0I/gTmLuiyzqj9VdpMwA01OcO7XjeLJzp8ZNtWUMXk/Hpo5DsSrF+hnT0HH';
+        console.log('Called Constructor');
+        //this.route.queryParams.subscribe((params) => {
+        //    this.payload = params['payload'];
+        //  });
+        this.getNftDetails(this.tagData);
+
+    }
+
+    getNftDetails(payload: String) {
+        this.apiResp = this.backendService.getNftDetails(this.tagData);
+
+        console.log(this.apiResp);
+    }
 }

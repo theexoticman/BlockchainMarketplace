@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   backendUrl: "http://localhost:8080/",
-  backendEndPoint: "api/contacts"
+  backendNftDetails: "api/nft/details"
 };
 /*
  * For easier debugging in development mode, you can import the following file

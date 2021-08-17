@@ -1,5 +1,9 @@
 .blocks {
-    padding-top: 100px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.nft_card {
+    box-shadow: 0px 3px 5px 5px rgb(218, 190, 190);
 }

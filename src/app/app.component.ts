@@ -17,16 +17,16 @@ export interface Tile {
 export class AppComponent {
     title = 'blockchain-viewer';
 
-    currentTab = '';
+    currentTab = '3';
     addresses: Observable<string[]>;
     tiles: Tile[] = [
         {
-            text: 'Fractionalized Non-Fungible Token',
+            text: 'Fractionalized NFT',
             cols: 3,
             rows: 1,
             color: 'lightblue',
         },
-        { text: 'Non-Fungible Token', cols: 1, rows: 2, color: 'lightgreen' },
+        { text: 'Fundraising STO', cols: 1, rows: 2, color: 'lightgreen' },
         { text: 'NFT & Physical Art', cols: 1, rows: 1, color: 'lightpink' },
         { text: 'Investing', cols: 2, rows: 1, color: '#DDBDF1' },
     ];

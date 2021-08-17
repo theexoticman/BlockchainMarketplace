@@ -8,9 +8,10 @@ import { TestingComponent } from './testing/testing.component';
 import { GoComponent } from './go/go.component';
 import { SpringComponent } from './spring/spring.component';
 import { EmailSuscribeComponent } from './email-suscribe/email-suscribe.component';
+import { BlocksComponent } from './blocks/blocks.component';
 
 const routes: Routes = [
-		{ path: 'Blockchain-Viewer', component: BlockchainViewerComponent },
+		{ path: 'Physical NFT', component: BlocksComponent },
 		{ path: 'Infra-as-Code', component: InfraAsCodeComponent },
 		{ path: 'Angular', component: AngularComponent },
 		{ path: 'Go', component: GoComponent },

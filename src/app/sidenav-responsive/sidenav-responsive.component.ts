@@ -19,19 +19,13 @@ export class SidenavResponsiveComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
   shouldRun = true;
 
-  MenuItems = ['Blockchain-Viewer', 'Kafka', 'Spring', 'Testing', 'Go', 'Infra-as-Code', 'Angular', 'Subscribe'];
+  MenuItems = ['Physical NFT', 'Fractionalized NFT', 'Security Tokens'];
 
 
   Blocks = new Map([['Block1', 'Block 1 description'], ['Block2', 'Block 2 description']]); // legacy. to use the blockarray type
 
 
-  fillerContent = Array.from({ length: 50 }, () =>
-    `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-       laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-       voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
-
+ 
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
@@ -46,7 +40,7 @@ export class SidenavResponsiveComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-
+/* 
   currentTab = "";
 
   tiles: Tile[] = [
@@ -59,6 +53,6 @@ export class SidenavResponsiveComponent implements OnDestroy {
   PickContent(event) {
     this.currentTab = event.tab.textLabel;
   }
-
+ */
 
 }

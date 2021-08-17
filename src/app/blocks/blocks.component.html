@@ -1,19 +1,7 @@
 <div class="blocks">
 
-    <ng-container *ngIf="blocksLists | async">
+    <ng-container *ngIf="(blocksLists | async) as blocksLists">
         <app-nft-card></app-nft-card>
 
-        <mat-accordion>
-            <mat-expansion-panel hideToggle *ngFor="let block of blocksLists |  async">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        History Details
-                    </mat-panel-title>
-                    <mat-panel-description>
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <app-history></app-history>
-            </mat-expansion-panel>
-        </mat-accordion>
     </ng-container>
 </div>

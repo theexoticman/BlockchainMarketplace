@@ -8,7 +8,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyModule } from './app/app.module';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { AppRoutingModule } from './app/app-routing.module';
 import { SidenavResponsiveComponent } from './app/sidenav-responsive/sidenav-responsive.component';
 import { AppComponent } from './app/app.component';
@@ -27,10 +26,11 @@ import { OrdererComponent } from './app/orderer/orderer.component';
 import { BlocksComponent } from './app/blocks/blocks.component';
 import { MatCardModule } from '@angular/material/card';
 import { EmailSuscribeComponent } from './app/email-suscribe/email-suscribe.component';
-import { Injectable } from '@angular/core';
 import { BackendService } from './app/services/backend.service';
 import {NftCardComponent} from './app/nft-card/nft-card.component'
 import { HistoryComponent } from './app/history/history.component';
+import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+
 
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
@@ -47,7 +47,7 @@ import { HistoryComponent } from './app/history/history.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
   ],
   entryComponents: [AppComponent],
   declarations: [
@@ -73,7 +73,8 @@ import { HistoryComponent } from './app/history/history.component';
   providers: [
     BackendService,
     BlockchainService
-  ]
+  ],
+  exports: [RouterModule]
 })
 export class AppModule { }
 
